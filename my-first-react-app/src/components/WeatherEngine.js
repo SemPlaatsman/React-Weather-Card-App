@@ -26,7 +26,7 @@ const WeatherEngine = ({ location }) => {
     setLoading(true);
     try {
       const apiResponse = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${query},uk&units=metric&APPID=07d1defed4fac6264a8338d3a97b820f`
+        `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=07d1defed4fac6264a8338d3a97b820f`
       );
       const responseJSON = await apiResponse.json();
       setWeather({
@@ -48,7 +48,18 @@ const WeatherEngine = ({ location }) => {
 
   if (error) {
     return (
-      <div style={{ color: "black" }}>
+      <div
+        style={{
+          color: "black",
+          display: "flex",
+          width: "200px",
+          height: "240px",
+          flexDirection: "column",
+          justifyContent: "center",
+          textAlign: "center",
+          //border: "2px solid black",
+        }}
+      >
         There has been an error
         <br />
         <button onClick={() => setError(false)}>Reset</button>

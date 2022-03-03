@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "@emotion/styled";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Location = ({ city, country, getWeather }) => {
   const [query, setQuery] = useState("");
@@ -20,7 +20,8 @@ const Location = ({ city, country, getWeather }) => {
           <Form
             onSubmit={(event) => {
               event.preventDefault();
-              getWeather(query + ",");
+              //getWeather(query + ",");
+              getWeather(query);
             }}
           >
             <InputField
